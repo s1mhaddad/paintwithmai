@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
 <!-- Bootstrap 5.3 -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -48,9 +49,8 @@
   @keyframes draw{ to{ stroke-dashoffset:0; } }
 
   /* ---- Navbar ---- */
-  .navbar{ background:rgba(243,236,222,0.94); backdrop-filter:blur(6px); border-bottom:1px solid var(--line); }
-  .navbar-brand{ font-family:'Fraunces', serif; font-weight:600; font-size:1.35rem; }
-  .navbar-brand .amp{ color:var(--wine); font-style:italic; padding:0 3px; }
+  .navbar{ background:rgba(255, 255, 255, 0.94); backdrop-filter:blur(6px); border-bottom:1px solid var(--line); }
+  .navbar-brand img{ width: 75px; height: 75px; object-fit: cover; border-radius: 50%; border: 1.5px solid var(--line); }
   .nav-link{ color:var(--ink) !important; position:relative; font-size:0.95rem; transition:color .2s ease; }
   .nav-link:hover{ color:var(--wine) !important; }
   .nav-link.active{ font-weight:700; }
@@ -62,8 +62,12 @@
   /* Offcanvas side nav (mobile) */
   .offcanvas{ background:var(--cream); width:min(320px, 82vw); }
   .offcanvas .nav-link{ font-size:1.1rem; padding:0.65rem 0; }
-  .offcanvas-header{ border-bottom:1px solid var(--line); }
+  .offcanvas-header{ border-bottom:1px solid var(--line); background: #ffffff; border-bottom: 1px solid var(--line); }
 
+  .btn-close{
+    opacity: 1;
+    filter: none; /* Bootstrap's default X is a semi-transparent black SVG — this makes it fully solid */
+  }
   /* ---- Sections ---- */
   section.view{ display:none; padding:64px 0 96px; }
   section.view.active{ display:block; animation:fade .4s ease; }
@@ -81,7 +85,7 @@
   .btn-outline-ink{ border:1.5px solid var(--ink); color:var(--ink); border-radius:2px; }
   .btn-outline-ink:hover{ background:var(--ink); color:var(--cream); }
 
-  .hung-stack{ position:relative; height:420px; margin-bottom: 270px;}
+  .hung-stack{ position:relative; height:420px; margin-bottom: 250px;}
   .canvas-swatch{ position:absolute; width:62%; aspect-ratio:4/5; border:10px solid var(--cream); box-shadow:var(--shadow); border-radius:1px; }
   .sw1{ background:linear-gradient(150deg, var(--wine) 0%, var(--wine-deep) 55%, #3d1418 100%); top:0; right:0; transform:rotate(3deg); z-index:3;}
   .sw2{ background:linear-gradient(160deg, var(--ochre) 0%, #a9672a 60%, var(--sage) 130%); top:80px; right:34%; transform:rotate(-6deg); z-index:2;}
@@ -158,14 +162,32 @@
   .form-msg{ font-size:0.85rem; color:var(--sage); }
 
   footer{ border-top:1px solid var(--line); font-size:0.82rem; color:#8a8078; font-family:'IBM Plex Mono', monospace; }
-  footer .insta-tag{ color:var(--wine); }
+  footer .social-icon{
+  color: var(--ink);
+  font-size: 1.2rem;
+  transition: color .2s ease;
+}
+footer .social-icon:hover{
+  color: var(--wine);
+}
 
+  @media (max-width:1024.98px){
+    .hung-stack{ margin-bottom: 115px; }
+  }
   @media (max-width:991.98px){
     .gallery-grid{ grid-template-columns:repeat(2,1fr); grid-auto-rows:160px; }
+    .hung-stack{ margin-bottom: 30px; }
   }
   @media (max-width:575.98px){
     .gallery-grid{ grid-template-columns:1fr; grid-auto-rows:220px; }
     .gallery-card.wide{ grid-column:span 1; }
+    .hung-stack{ margin-bottom: 130px; }
+  }
+  @media (max-width:375.98px){
+    .hung-stack{ margin-bottom: 90px; }
+  }
+   @media (max-width:321.98px){
+    .hung-stack{ margin-bottom: 50px; }
   }
 </style>
 </head>
@@ -174,7 +196,7 @@
 <!-- ===== NAVBAR ===== -->
 <nav class="navbar navbar-expand-md sticky-top py-3">
   <div class="container">
-    <a class="navbar-brand" href="#" data-nav="about">Logo</a>
+    <a class="navbar-brand" href="#" data-nav="about"><img src="logo.jpg" alt="Paint with Mai"></a>
 
     <!-- Toggler opens an offcanvas panel from the side on mobile -->
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sideNav" aria-controls="sideNav" aria-label="Toggle navigation">
@@ -195,7 +217,7 @@
 <!-- ===== OFFCANVAS SIDE NAV (mobile) ===== -->
 <div class="offcanvas offcanvas-end" tabindex="-1" id="sideNav" aria-labelledby="sideNavLabel">
   <div class="offcanvas-header">
-    <span class="navbar-brand mb-0" id="sideNavLabel">Ochre<span class="amp">&amp;</span>Vine</span>
+    <span class="navbar-brand mb-0" id="sideNavLabel"><img src="logo.jpg" alt="Paint with Mai"></span>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
@@ -223,7 +245,7 @@
         </div>
       </div>
       <div class="col-md-5">
-        <div class="hung-stack" aria-hidden="true">
+        <div class="hung-stack pb-md-4" aria-hidden="true">
           <div class="canvas-swatch sw1"></div>
           <div class="canvas-swatch sw2"></div>
           <div class="canvas-swatch sw3"></div>
@@ -338,7 +360,10 @@
 <footer class="py-4 mt-4">
   <div class="container d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 text-center text-sm-start">
     <div>&copy; 2026 Paint with Mai — handmade in small batches, one canvas at a time.</div>
-    <a href="#" class="insta-tag text-decoration-none">@paintwithmai</a>
+    <div class="d-flex gap-3">
+      <a href="https://www.facebook.com/paintwithmai/" class="social-icon" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.instagram.com/paintwithmai/" class="social-icon" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+    </div>
   </div>
 </footer>
 
