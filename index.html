@@ -15,11 +15,11 @@
 
 <style>
   :root{
-    --ink:#26201C;
-    --canvas:#F3ECDE;
+    --ink:#442626;
+    --canvas:#fceee9;
     --canvas-deep:#EAE0CC;
-    --wine:#7B2D34;
-    --wine-deep:#5E2027;
+    --wine:#a3b899;
+    --wine-deep:#667b68;
     --ochre:#C7883C;
     --sage:#7C8B6B;
     --cream:#FBF6EC;
@@ -36,8 +36,8 @@
   body{ -webkit-font-smoothing:antialiased; min-height:100vh; display:flex; flex-direction:column; }
   main{ flex:1 0 auto; }
   footer{ flex-shrink:0; }
-  h1,h2,h3,.brand-font{ font-family:'Fraunces', serif; font-weight:500; letter-spacing:-0.01em; }
-  .mono{ font-family:'IBM Plex Mono', monospace; letter-spacing:0.02em; }
+  h1,h2,h3,.brand-font{ font-family:'Fraunces', serif; font-weight:500; letter-spacing:-0.01em; color:#667b68;}
+  .mono{ font-family:'IBM Plex Mono', monospace; letter-spacing:0.02em; color:#667b68;}
 
   /* ---- Brushstroke ---- */
   .brush-underline{ width:min(220px, 40vw); height:14px; margin-top:10px; }
@@ -77,7 +77,7 @@
     font-family:'IBM Plex Mono', monospace; font-size:0.78rem; letter-spacing:0.14em;
     text-transform:uppercase; color:var(--wine); margin-bottom:14px; display:block;
   }
-  .hero h1{ font-size:clamp(2.2rem, 4.5vw, 3.5rem); line-height:1.05; }
+  .hero h1{ font-size:clamp(2.2rem, 4.5vw, 3.5rem); line-height:1.05; color:#667b68; }
   .hero p.lead{ font-size:1.08rem; color:#4A423C; }
 
   .btn-wine{ background:var(--wine); border-color:var(--wine); color:var(--cream); border-radius:2px; }
@@ -87,10 +87,13 @@
 
   .hung-stack{ position:relative; height:420px; margin-bottom: 250px;}
   .canvas-swatch{ position:absolute; width:62%; aspect-ratio:4/5; border:10px solid var(--cream); box-shadow:var(--shadow); border-radius:1px; }
-  .sw1{ background:linear-gradient(150deg, var(--wine) 0%, var(--wine-deep) 55%, #3d1418 100%); top:0; right:0; transform:rotate(3deg); z-index:3;}
-  .sw2{ background:linear-gradient(160deg, var(--ochre) 0%, #a9672a 60%, var(--sage) 130%); top:80px; right:34%; transform:rotate(-6deg); z-index:2;}
-  .sw3{ background:linear-gradient(140deg, var(--sage) 0%, #5f6e51 70%); top:190px; right:6%; transform:rotate(8deg); z-index:1; opacity:0.9;}
-
+.sw3{
+  background-image: url('C:/Users/Admin/Desktop/mai.jpg');
+  background-size: cover;
+  background-position: center;
+  top:140px; right:11%; transform:rotate(8deg); z-index:1; opacity:0.9;
+  width: 77%;
+}
   .divider{ width:100%; height:20px; margin:16px 0 40px; opacity:0.7;}
   .divider path{ stroke:var(--ink); stroke-width:2; fill:none; opacity:0.35;}
 
@@ -194,22 +197,27 @@ footer .social-icon:hover{
 }
 
   @media (max-width:1024.98px){
-    .hung-stack{ margin-bottom: 115px; }
+    .hung-stack{ margin-bottom: 0px; }
+    .sw3 { top: 15px; }
   }
   @media (max-width:991.98px){
     .gallery-grid{ grid-template-columns:repeat(2,1fr); grid-auto-rows:160px; }
     .hung-stack{ margin-bottom: 30px; }
+    .sw3 { top: 70px; }
   }
   @media (max-width:575.98px){
     .gallery-grid{ grid-template-columns:1fr; grid-auto-rows:220px; }
     .gallery-card.wide{ grid-column:span 1; }
-    .hung-stack{ margin-bottom: 130px; }
+    .hung-stack{ margin-bottom: 40px; }
+    .sw3 { top: 15px; }
   }
   @media (max-width:375.98px){
-    .hung-stack{ margin-bottom: 90px; }
+    .hung-stack{ margin-bottom: -10px; }
+    .sw3 { top: 15px; }
   }
    @media (max-width:321.98px){
-    .hung-stack{ margin-bottom: 50px; }
+    .hung-stack{ margin-bottom: -60px; }
+    .sw3 { top: 15px; }
   }
 </style>
 </head>
@@ -259,10 +267,10 @@ footer .social-icon:hover{
   <section id="about" class="view active">
     <div class="row hero align-items-center gy-5">
       <div class="col-md-7">
-        <span class="eyebrow">Studio &amp; Gallery</span>
-        <h1>Original paintings, made slow and hung loud.</h1>
+        <h1>Mixed Media &amp; Mindful Art Workshops for everyone</h1>
         <svg class="brush-underline" viewBox="0 0 220 14"><path d="M4 8 C 40 2, 80 12, 120 6 S 200 2, 216 8"/></svg>
-        <p class="lead mt-3">Paint with Mai is a small studio practice — bold, hand-painted canvas work built in layers over weeks, not printed on demand.</p>
+        <p class="lead mt-3">Paint with Mai is a name that creates relaxing, supportive spaces where people of all ages can unwind,
+experiment with mixed media art, and unlock their personal creativity.</p>
         <div class="d-flex gap-3 mt-4 flex-wrap">
           <a href="#" class="btn btn-wine px-4 py-2" data-nav="gallery">View the gallery</a>
           <a href="#" class="btn btn-outline-ink px-4 py-2" data-nav="contact">Get in touch</a>
@@ -270,28 +278,31 @@ footer .social-icon:hover{
       </div>
       <div class="col-md-5">
         <div class="hung-stack pb-md-4" aria-hidden="true">
-          <div class="canvas-swatch sw1"></div>
-          <div class="canvas-swatch sw2"></div>
           <div class="canvas-swatch sw3"></div>
         </div>
       </div>
     </div>
 
-    <svg class="divider" viewBox="0 0 1180 20" preserveAspectRatio="none"><path d="M0 10 C 300 2, 600 18, 900 8 S 1150 4, 1180 10"/></svg>
-
     <div class="row gy-5">
-      <div class="col-md-5">
-        <h3 class="mb-3">The studio</h3>
-        <p class="text-body-secondary">Every piece starts on the easel in the back room — layered, reworked, and left to dry between sessions. Nothing here comes off a printer.</p>
-        <div class="d-flex gap-5 mt-4 flex-wrap">
-          <div class="stat"><div class="num">120+</div><div class="label">Originals made</div></div>
-          <div class="stat"><div class="num">6yrs</div><div class="label">Painting full time</div></div>
-        </div>
-      </div>
-      <div class="col-md-7">
+      <div class="col-md-12">
         <h3 class="mb-3">How it started</h3>
-        <p class="text-body-secondary">What began as weekend canvases sold out of a garage turned into a proper studio practice — abstract landscapes and warm, pigment-heavy still lifes, built one layer at a time.</p>
-        <p class="text-body-secondary">This site is currently a showcase of that work. Original pieces, prints, and paint-and-sip studio nights are coming to the site soon — for now, reach out directly.</p>
+        <p class="text-body-secondary">I am a mixed media artist, art facilitator and the creator of Painting with Mai, where I create spaces
+for creativity, wellbeing and connection. I facilitate water colour, acrylics, gelliprinting, alcohol ink
+and collage workshops. My vision is that Creativity is not reserved for artists. It is a pathway to
+wellbeing, confidence, connection and personal growth.</p>
+        <p class="text-body-secondary">My paintings are versatile ranging between realistic and abstract art. Earlier in my life I was focused
+on lose watercolours, I then trained on botanical art under David Reynolds for a couple of years. Life
+then led me to floral and landscape acrylics. Being a medical researcher equipped me with tools to
+experiment with acrylic paint on gelliprints and collages. I then fell in love with alcohol inks and have
+recently started to combine all the different types of media in mixed media artwork.</p>
+        <p class="text-body-secondary">My passion to teaching led me to facilitating workshops for all ages seeking connection and sharing
+the love of art in a relaxing atmosphere. In 2026 I decided to take this a step further and formalised
+my <a href="https://www.instagram.com/paintwithmai/" class="social-icon" aria-label="Instagram" style="text-decoration:none; color:#667b68;">@paintwithmai</a> brand to invite the participants to pause, create art in a relaxing atmosphere. My
+real goal is to allow everyone who joins a paint with Mai workshop to freely express their selves and
+confidently start their creative journey. Participants at my workshops are invited to mindfully
+unwind while exploring colour and a variety of mixed media techniques.</p>
+<p class="text-body-secondary">Enjoy painting.</p>
+<p class="text-body-secondary">Mai Sarraj</p>
       </div>
     </div>
   </section>
@@ -299,16 +310,17 @@ footer .social-icon:hover{
   <!-- ===== GALLERY ===== -->
   <section id="gallery" class="view">
     <div class="mb-5">
-      <span class="eyebrow">Selected Work</span>
       <h2 class="mb-2">Gallery</h2>
-      <p class="text-body-secondary" style="max-width:60ch;">A rotating selection of recent canvases, organized by series. Click a filter to narrow the view.</p>
+      <p class="text-body-secondary" style="max-width:60ch;">Original paintings, made slowly by hand to make a loud statement on your wall. My paintings
+are original, hand-painted built up layer by layer.</p>
     </div>
 
     <div class="d-flex gap-2 flex-wrap mb-4" id="filterRow">
       <button class="filter-pill active" data-filter="all">All work</button>
-      <button class="filter-pill" data-filter="landscape">Landscapes</button>
-      <button class="filter-pill" data-filter="stilllife">Still Life</button>
-      <button class="filter-pill" data-filter="abstract">Abstract</button>
+      <button class="filter-pill" data-filter="landscape">Botanical</button>
+      <button class="filter-pill" data-filter="stilllife">Abstract Acrylic</button>
+      <button class="filter-pill" data-filter="abstract">Land Scapes Acrylic</button>
+      <button class="filter-pill" data-filter="workshops">Workshops</button>
     </div>
 
     <div class="gallery-grid" id="galleryGrid"></div>
@@ -317,9 +329,9 @@ footer .social-icon:hover{
   <!-- ===== PACKAGES ===== -->
   <section id="packages" class="view">
     <div class="mb-5">
-      <span class="eyebrow">Studio Nights</span>
-      <h2 class="mb-2">Class Packages</h2>
-      <p class="text-body-secondary" style="max-width:60ch;">Paint-and-sip sessions and studio classes, sized for however often you want to show up. Online booking is coming soon — for now, message us to reserve a spot.</p>
+      <h2 class="mb-2">Workshop Packages</h2>
+      <p class="text-body-secondary" style="max-width:70ch;">Paint with Mai sessions and studio classes, sized for however often you want to show up. Online
+booking is coming soon, for now, message us to reserve a spot.</p>
     </div>
 
     <div class="row g-4">
@@ -327,15 +339,15 @@ footer .social-icon:hover{
         <div class="package-card">
           <div class="package-name">Single Session</div>
           <div class="package-tagline">Drop In</div>
-          <div class="package-price">$65 <span>/ session</span></div>
-          <p class="package-desc">One evening, one canvas — a low-commitment way to try a studio night.</p>
+          <div class="package-price">$60 <span>/ session</span></div>
+          <p class="package-desc">One evening, one painting medium: A low commitment way to painting.</p>
           <ul class="package-features">
-            <li><span class="check">&#10003;</span> One 2.5-hour guided session</li>
-            <li><span class="check">&#10003;</span> All materials &amp; canvas included</li>
-            <li><span class="check">&#10003;</span> Drinks included</li>
-            <li><span class="check">&#10003;</span> Take your finished piece home</li>
+            <li><span class="check">&#10003;</span> One 3 hour guided session</li>
+            <li><span class="check">&#10003;</span> All materials included</li>
+            <li><span class="check">&#10003;</span> Tea and biscuits included</li>
+            <li><span class="check">&#10003;</span> Take your finished artwork home</li>
           </ul>
-          <a href="#" class="btn btn-outline-ink py-2" data-nav="contact">Enquire</a>
+          <a href="#" class="btn btn-outline-ink py-2" data-nav="contact" data-enquiry="Session Booking - Single Session">Enquire</a>
         </div>
       </div>
 
@@ -344,16 +356,15 @@ footer .social-icon:hover{
           <span class="package-badge">Most Popular</span>
           <div class="package-name">Studio Pack</div>
           <div class="package-tagline">4-Session Bundle</div>
-          <div class="package-price">$240 <span>/ pack</span></div>
+          <div class="package-price">$230 <span>/ pack</span></div>
           <p class="package-desc">Four sessions to book across the month, at a lower rate per class.</p>
           <ul class="package-features">
-            <li><span class="check">&#10003;</span> Four 2.5-hour guided sessions</li>
-            <li><span class="check">&#10003;</span> All materials &amp; canvases included</li>
-            <li><span class="check">&#10003;</span> Drinks provided</li>
-            <li><span class="check">&#10003;</span> Priority booking for popular dates</li>
-            <li><span class="check">&#10003;</span> Valid for 3 months</li>
+            <li><span class="check">&#10003;</span> Four 3-hour guided sessions</li>
+            <li><span class="check">&#10003;</span> All materials included</li>
+            <li><span class="check">&#10003;</span> Tea and biscuits included</li>
+            <li><span class="check">&#10003;</span> Check the dates offered each month</li>
           </ul>
-          <a href="#" class="btn btn-wine py-2" data-nav="contact">Enquire</a>
+          <a href="#" class="btn btn-wine py-2" data-nav="contact" data-enquiry="Session Booking - Studio Pack">Enquire</a>
         </div>
       </div>
 
@@ -361,15 +372,15 @@ footer .social-icon:hover{
         <div class="package-card">
           <div class="package-name">Private Studio</div>
           <div class="package-tagline">Group Booking</div>
-          <div class="package-price">$750 <span>/ event</span></div>
-          <p class="package-desc">Book the whole studio for a private group — birthdays, hens, team nights.</p>
+          <div class="package-price">$550 <span>/ event</span></div>
+          <p class="package-desc">Book Paint with Mai for a private group — birthdays, hens, team nights.</p>
           <ul class="package-features">
             <li><span class="check">&#10003;</span> Up to 10 guests, 3-hour session</li>
-            <li><span class="check">&#10003;</span> All materials &amp; canvases included</li>
+            <li><span class="check">&#10003;</span> All materials included</li>
             <li><span class="check">&#10003;</span> Dedicated host for your group</li>
             <li><span class="check">&#10003;</span> Bring your own drinks &amp; snacks</li>
           </ul>
-          <a href="#" class="btn btn-outline-ink py-2" data-nav="contact">Enquire</a>
+          <a href="#" class="btn btn-outline-ink py-2" data-nav="contact" data-enquiry="Session Booking - Private Studio">Enquire</a>
         </div>
       </div>
     </div>
@@ -378,14 +389,14 @@ footer .social-icon:hover{
   <!-- ===== CONTACT ===== -->
   <section id="contact" class="view">
     <div class="mb-5">
-      <span class="eyebrow">Say Hello</span>
       <h2 class="mb-2">Contact us</h2>
-      <p class="text-body-secondary" style="max-width:60ch;">Questions about a piece, a commission, or an upcoming studio night — send a note and we'll reply within a couple of days.</p>
+      <p class="text-body-secondary" style="max-width:60ch;">Questions about a piece, a commission, or an upcoming Paint with Mai workshop, send a note
+and we&#39;ll reply within a couple of days.</p>
     </div>
     <div class="row gy-5">
       <div class="col-md-5">
         <h3 class="mb-3">Find us</h3>
-        <p class="text-body-secondary">The studio is open by appointment. Message us to arrange a visit or ask about current availability.</p>
+        <p class="text-body-secondary">We are open by appointment. Message us to arrange a visit or ask about current availability.</p>
       </div>
       <div class="col-md-7">
         <form id="contactForm" novalidate>
@@ -403,7 +414,9 @@ footer .social-icon:hover{
           </div>
           <div class="form-floating mb-3">
             <select class="form-select" id="enquiryType">
-              <option value="Session Booking">Session Booking</option>
+              <option value="Session Booking - Single Session">Session Booking - Single Session</option>
+              <option value="Session Booking - Studio Pack">Session Booking - Studio Pack</option>
+              <option value="Session Booking - Private Studio">Session Booking - Private Studio</option>
               <option value="Custom Artwork">Custom Artwork</option>
               <option value="General Enquiries/Other">General Enquiries/Other</option>
             </select>
@@ -468,9 +481,9 @@ footer .social-icon:hover{
   navLinks.forEach(l => l.addEventListener('click', e => {
     e.preventDefault();
     showView(l.dataset.nav);
-    if(l.closest('.package-card')){
+    if(l.dataset.enquiry){
       const enquirySelect = document.getElementById('enquiryType');
-      if(enquirySelect) enquirySelect.value = 'Session Booking';
+      if(enquirySelect) enquirySelect.value = l.dataset.enquiry;
     }
   }));
 
