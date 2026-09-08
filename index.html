@@ -88,7 +88,7 @@
   .hung-stack{ position:relative; height:420px; margin-bottom: 250px;}
   .canvas-swatch{ position:absolute; width:62%; aspect-ratio:4/5; border:10px solid var(--cream); box-shadow:var(--shadow); border-radius:1px; }
 .sw3{
-  background-image: url('mai.jpg');
+  background-image: url('C:/Users/Admin/Desktop/mai.jpg');
   background-size: cover;
   background-position: center;
   top:140px; right:11%; transform:rotate(8deg); z-index:1; opacity:0.9;
@@ -114,6 +114,7 @@
   .gallery-card.wide{ grid-column:span 2; }
   .gallery-card:focus-visible{ outline:2px solid var(--wine); outline-offset:3px; }
   .art-frame{ width:100%; height:100%; border:8px solid var(--cream); box-shadow:var(--shadow); position:relative; overflow:hidden; }
+  .art-frame img{ width:100%; height:100%; object-fit:cover; display:block; }
   .art-frame .texture{
     position:absolute; inset:0; mix-blend-mode:overlay; opacity:0.5;
     background-image:radial-gradient(circle at 30% 20%, rgba(255,255,255,0.5), transparent 40%),
@@ -142,6 +143,7 @@
   #artModal .modal-header{ border-bottom:1px solid var(--line); }
   #artModal .modal-footer{ border-top:1px solid var(--line); }
   #artModal .modal-art{ position:relative; width:100%; aspect-ratio:4/5; max-height:72vh; }
+  #artModal .modal-art img{ width:100%; height:100%; object-fit:cover; display:block; }
   #artModal .modal-art .texture{
     position:absolute; inset:0; mix-blend-mode:overlay; opacity:0.5;
     background-image:radial-gradient(circle at 30% 20%, rgba(255,255,255,0.5), transparent 40%),
@@ -302,7 +304,7 @@ real goal is to allow everyone who joins a paint with Mai workshop to freely exp
 confidently start their creative journey. Participants at my workshops are invited to mindfully
 unwind while exploring colour and a variety of mixed media techniques.</p>
 <p class="text-body-secondary">Enjoy painting.</p>
-<p class="text-body-secondary">Mai Sarraj</p>
+<p class="text-body-secondary">Mai</p>
       </div>
     </div>
   </section>
@@ -317,9 +319,9 @@ are original, hand-painted built up layer by layer.</p>
 
     <div class="d-flex gap-2 flex-wrap mb-4" id="filterRow">
       <button class="filter-pill active" data-filter="all">All work</button>
-      <button class="filter-pill" data-filter="landscape">Botanical</button>
-      <button class="filter-pill" data-filter="stilllife">Abstract Acrylic</button>
-      <button class="filter-pill" data-filter="abstract">Land Scapes Acrylic</button>
+      <button class="filter-pill" data-filter="botanical">Botanical</button>
+      <button class="filter-pill" data-filter="abstract-acrylic">Abstract Acrylic</button>
+      <button class="filter-pill" data-filter="landscape-acrylic">Land Scapes Acrylic</button>
       <button class="filter-pill" data-filter="workshops">Workshops</button>
     </div>
 
@@ -488,16 +490,26 @@ and we&#39;ll reply within a couple of days.</p>
   }));
 
   // ---------- Gallery data ----------
+  // Categories: botanical | abstract-acrylic | landscape-acrylic | workshops
   const works = [
-    {title:"Low Tide, Ochre Hour", meta:"Oil on canvas · 24×30in", cls:"p1", cat:"landscape", size:"tall"},
-    {title:"Evening Grove", meta:"Acrylic on canvas · 20×24in", cls:"p2", cat:"landscape", size:""},
-    {title:"Wine-Dark Field", meta:"Oil on canvas · 30×40in", cls:"p3", cat:"landscape", size:"wide"},
-    {title:"Study in Ash", meta:"Acrylic on canvas · 16×20in", cls:"p4", cat:"abstract", size:""},
-    {title:"Harvest Interior", meta:"Oil on canvas · 24×24in", cls:"p5", cat:"stilllife", size:"tall"},
-    {title:"Three Pigments", meta:"Mixed media · 28×28in", cls:"p6", cat:"abstract", size:""},
-    {title:"Morning Citrus", meta:"Oil on canvas · 18×18in", cls:"p7", cat:"stilllife", size:""},
-    {title:"Coastal Ridge", meta:"Oil on canvas · 36×24in", cls:"p8", cat:"landscape", size:"wide"},
-    {title:"Fracture Study II", meta:"Mixed media · 22×22in", cls:"p9", cat:"abstract", size:""},
+    // --- Botanical (placeholders — swap `cls` for `img` once you have photos, same as Abstract Acrylic below) ---
+    {title:"Study in Petals", meta:"Botanical watercolour · 30×40cm", cls:"p2", cat:"botanical", size:"tall"},
+    {title:"Wildflower Sketch", meta:"Botanical watercolour · 24×30cm", cls:"p7", cat:"botanical", size:""},
+
+    // --- Abstract Acrylic (real uploads) ---
+{title:"Grounded", meta:"Abstract acrylic · 94×61cm", img:"C:/Users/Admin/Desktop/images/abstract-acrylic/Grounded.jpeg", cat:"abstract-acrylic", size:"tall"},
+{title:"The Language of Petals", meta:"Abstract acrylic · 94×61cm", img:"C:/Users/Admin/Desktop/images/abstract-acrylic/The-language-of-petals.jpeg", cat:"abstract-acrylic", size:"tall"},
+{title:"Velvet Symphony", meta:"Abstract acrylic · 76×90×3.5cm", img:"C:/Users/Admin/Desktop/images/abstract-acrylic/Velvet-Symphony.jpeg", cat:"abstract-acrylic", size:"wide"},
+{title:"Blue Beauty I", meta:"Abstract acrylic · 76×61cm", img:"C:/Users/Admin/Desktop/images/abstract-acrylic/Blue-beauty1.jpeg", cat:"abstract-acrylic", size:""},
+{title:"Blue Beauty II", meta:"Abstract acrylic · 76×61cm", img:"C:/Users/Admin/Desktop/images/abstract-acrylic/Blue-beauty2.jpeg", cat:"abstract-acrylic", size:""},
+
+    // --- Landscape Acrylic (placeholders) ---
+    {title:"Coastal Ridge", meta:"Acrylic on canvas · 36×24in", cls:"p8", cat:"landscape-acrylic", size:"wide"},
+    {title:"Evening Grove", meta:"Acrylic on canvas · 20×24in", cls:"p3", cat:"landscape-acrylic", size:""},
+
+    // --- Workshops (placeholders) ---
+    {title:"Studio Night, Group Table", meta:"Workshop · Paint with Mai", cls:"p6", cat:"workshops", size:""},
+    {title:"Gelliprinting Session", meta:"Workshop · Paint with Mai", cls:"p9", cat:"workshops", size:""},
   ];
 
   const grid = document.getElementById('galleryGrid');
@@ -513,9 +525,12 @@ and we&#39;ll reply within a couple of days.</p>
       card.setAttribute('tabindex', '0');
       card.setAttribute('aria-label', `View ${w.title} larger`);
       card.dataset.index = i;
+      const frameInner = w.img
+        ? `<img src="${w.img}" alt="${w.title}">`
+        : `<div class="texture"></div>`;
       card.innerHTML = `
-        <div class="art-frame ${w.cls}">
-          <div class="texture"></div>
+        <div class="art-frame ${w.img ? '' : w.cls}">
+          ${frameInner}
           <div class="g-overlay">
             <div>
               <div class="g-title">${w.title}</div>
@@ -543,10 +558,15 @@ and we&#39;ll reply within a couple of days.</p>
   const modalMeta = document.getElementById('modalMeta');
 
   function openArtModal(work){
-    modalArt.className = `modal-art ${work.cls}`;
-    modalArt.innerHTML = '<div class="texture"></div>';
     modalTitle.textContent = work.title;
     modalMeta.textContent = work.meta;
+    if(work.img){
+      modalArt.className = 'modal-art';
+      modalArt.innerHTML = `<img src="${work.img}" alt="${work.title}">`;
+    } else {
+      modalArt.className = `modal-art ${work.cls}`;
+      modalArt.innerHTML = '<div class="texture"></div>';
+    }
     artModal.show();
   }
 
