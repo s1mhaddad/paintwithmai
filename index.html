@@ -3,7 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Paint with Mai</title>
+<title>Paint with Mai | Mixed Media & Mindful Art Workshops</title>
+<meta name="description" content="Paint with Mai is a Melbourne based artist-run business, offering relaxing mixed media, watercolour and acrylic art workshops for all ages, plus original and commissioned botanical and abstract acrylic paintings.">
+<link rel="canonical" href="https://www.paintwithmai.com.au/">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/favicon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Paint with Mai">
+<meta property="og:title" content="Paint with Mai | Mixed Media & Mindful Art Workshops">
+<meta property="og:description" content="Paint with Mai is a Melbourne based artist-run business, offering relaxing mixed media, watercolour and acrylic art workshops for all ages, plus original and commissioned botanical and abstract acrylic paintings.">
+<meta property="og:url" content="https://www.paintwithmai.com.au/">
+<meta property="og:image" content="https://www.paintwithmai.com.au/logo.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Paint with Mai",
+  "url": "https://www.paintwithmai.com.au/",
+  "logo": "https://www.paintwithmai.com.au/logo.jpg",
+  "description": "Paint with Mai is a Melbourne based artist-run business, offering relaxing mixed media, watercolour and acrylic art workshops for all ages, plus original and commissioned botanical and abstract acrylic paintings.",
+  "sameAs": [
+    "https://www.instagram.com/paintwithmai/",
+    "https://www.facebook.com/share/189zHYfiaV/?mibextid=wwXIfr"
+  ]
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -150,6 +177,25 @@
     background-image:radial-gradient(circle at 30% 20%, rgba(255,255,255,0.5), transparent 40%),
                       radial-gradient(circle at 70% 80%, rgba(0,0,0,0.3), transparent 45%);
   }
+  
+    /* ---- Bookings ---- */
+  .workshop-card{
+    background:var(--cream); border:1.5px solid var(--line); border-radius:4px;
+    padding:28px 26px; height:100%; display:flex; flex-direction:column; gap:14px;
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .workshop-card:hover{ border-color:var(--wine); transform:translateY(-4px); }
+  .workshop-date{
+    display:flex; align-items:baseline; gap:10px;
+    font-family:'IBM Plex Mono', monospace; color:var(--wine-deep);
+    text-transform:uppercase; letter-spacing:0.06em; font-size:0.8rem;
+  }
+  .workshop-date .day{ font-family:'Fraunces', serif; font-size:2.6rem; line-height:1; letter-spacing:0; color:var(--wine-deep); }
+  .workshop-title{ font-size:1.25rem; margin:0; }
+  .workshop-time{ font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color:#6b6156; margin-top:auto; }
+  .booking-info{ display:flex; flex-wrap:wrap; gap:10px 28px; margin-bottom:36px; }
+  .booking-info span{ display:inline-flex; align-items:center; gap:8px; font-size:0.95rem; color:#4A423C; }
+  .booking-info i{ color:var(--wine-deep); }
 
   /* ---- Packages ---- */
   .package-card{
@@ -236,6 +282,7 @@ footer .social-icon:hover{
     .sw3 { top: 15px; }
   }
 </style>
+<meta name="google-site-verification" content="KDQyJkt5KZtp7Hw0ZEm6UDFpOyuJmk6w7aRsN8-Bmqk" />
 </head>
 <body>
 
@@ -255,6 +302,7 @@ footer .social-icon:hover{
         <li class="nav-item"><a class="nav-link active" href="#" data-nav="about">About</a></li>
         <li class="nav-item"><a class="nav-link" href="#" data-nav="gallery">Gallery</a></li>
         <li class="nav-item"><a class="nav-link" href="#" data-nav="packages">Packages</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-nav="bookings">Bookings</a></li>
         <li class="nav-item"><a class="nav-link" href="#" data-nav="contact">Contact</a></li>
       </ul>
     </div>
@@ -272,6 +320,7 @@ footer .social-icon:hover{
       <li class="nav-item"><a class="nav-link active" href="#" data-nav="about" data-bs-dismiss="offcanvas">About</a></li>
       <li class="nav-item"><a class="nav-link" href="#" data-nav="gallery" data-bs-dismiss="offcanvas">Gallery</a></li>
       <li class="nav-item"><a class="nav-link" href="#" data-nav="packages" data-bs-dismiss="offcanvas">Packages</a></li>
+      <li class="nav-item"><a class="nav-link" href="#" data-nav="bookings" data-bs-dismiss="offcanvas">Bookings</a></li>
       <li class="nav-item"><a class="nav-link" href="#" data-nav="contact" data-bs-dismiss="offcanvas">Contact</a></li>
     </ul>
   </div>
@@ -392,6 +441,53 @@ booking is coming soon, for now, message us to reserve a spot.</p>
       </div>
     </div>
   </section>
+  
+    <!-- ===== BOOKINGS ===== -->
+  <section id="bookings" class="view">
+    <div class="mb-4">
+      <span class="eyebrow">November Workshops</span>
+      <h2 class="mb-3">Bookings</h2>
+      <p class="text-body-secondary" style="max-width:60ch;">I'm pleased to announce three Saturday art workshops this November. Choose one session, or join all three.</p>
+    </div>
+
+    <div class="booking-info">
+      <span><i class="bi bi-calendar-event"></i> Saturdays in November</span>
+      <span><i class="bi bi-clock"></i> 2:00 – 5:00 pm</span>
+      <span><i class="bi bi-geo-alt"></i> Mitcham</span>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="workshop-card">
+          <div class="workshop-date"><span class="day">7</span> Saturday · Nov</div>
+          <h3 class="workshop-title">Australian Native Flowers and Leaves Gelli Printing</h3>
+          <div class="workshop-time">2–5 pm · Mitcham</div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="workshop-card">
+          <div class="workshop-date"><span class="day">14</span> Saturday · Nov</div>
+          <h3 class="workshop-title">Mixed Media and Gelli Plate Greeting Card Making</h3>
+          <div class="workshop-time">2–5 pm · Mitcham</div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="workshop-card">
+          <div class="workshop-date"><span class="day">21</span> Saturday · Nov</div>
+          <h3 class="workshop-title">Botanical Collage on Canvas</h3>
+          <div class="workshop-time">2–5 pm · Mitcham</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-5">
+      <p class="text-body-secondary mb-3">To book any of the sessions, please click below.</p>
+      <a href="https://YOUR-BOOKING-LINK-HERE" target="_blank" rel="noopener" class="btn btn-wine px-4 py-2">Book a session</a>
+      <p class="text-body-secondary mt-4 mb-0">Questions first? <a href="#" data-nav="contact" style="color:#667b68;">Get in touch</a>.</p>
+    </div>
+  </section>
 
   <!-- ===== CONTACT ===== -->
   <section id="contact" class="view">
@@ -407,37 +503,54 @@ and we&#39;ll reply within a couple of days.</p>
       </div>
       <div class="col-md-7">
         <form id="contactForm" novalidate>
-          <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="name" placeholder="Your Name" required>
-            <label for="name">Your Name</label>
-          </div>
-          <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="email" placeholder="Email" required>
-            <label for="email">Email</label>
-          </div>
-          <div class="form-floating mb-3">
-            <input type="tel" class="form-control" id="phone" placeholder="Phone Number">
-            <label for="phone">Phone Number</label>
-          </div>
-          <div class="form-floating mb-3">
-            <select class="form-select" id="enquiryType">
-              <option value="Session Booking - Single Session">Session Booking - Single Session</option>
-              <option value="Session Booking - Studio Pack">Session Booking - Studio Pack</option>
-              <option value="Session Booking - Private Studio">Session Booking - Private Studio</option>
-              <option value="Custom Artwork">Custom Artwork</option>
-              <option value="General Enquiries/Other">General Enquiries/Other</option>
-            </select>
-            <label for="enquiryType">Enquiry Type</label>
-          </div>
-          <div class="form-floating mb-3">
-            <textarea class="form-control" id="message" placeholder="Your Message" style="height:150px" required></textarea>
-            <label for="message">Your Message</label>
-          </div>
-          <div class="d-flex align-items-center gap-3 mt-4">
-            <button type="submit" class="btn btn-wine px-4 py-2">Send message</button>
-            <span class="form-msg" id="formMsg"></span>
-          </div>
-        </form>
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" maxlength="100" required>
+    <label for="name">Your Name *</label>
+    <div class="invalid-feedback">Please enter your name.</div>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="email" class="form-control" id="email" name="email" placeholder="Email" maxlength="150" required>
+    <label for="email">Email *</label>
+    <div class="invalid-feedback">Please enter a valid email address.</div>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number" maxlength="30"
+           pattern="[0-9+\s\(\)\-]{6,30}">
+    <label for="phone">Phone Number (optional)</label>
+    <div class="invalid-feedback">Please enter a valid phone number, or leave it blank.</div>
+  </div>
+
+  <div class="form-floating mb-3">
+    <select class="form-select" id="enquiryType" name="enquiry_type" required>
+      <option value="" selected disabled>Select an enquiry type</option>
+      <option value="Session Booking - Single Session">Session Booking - Single Session</option>
+      <option value="Session Booking - Studio Pack">Session Booking - Studio Pack</option>
+      <option value="Session Booking - Private Studio">Session Booking - Private Studio</option>
+      <option value="Custom Artwork">Custom Artwork</option>
+      <option value="General Enquiries/Other">General Enquiries/Other</option>
+    </select>
+    <label for="enquiryType">Enquiry Type *</label>
+    <div class="invalid-feedback">Please choose an enquiry type.</div>
+  </div>
+
+  <div class="form-floating mb-3">
+    <textarea class="form-control" id="message" name="message" placeholder="Your Message" style="height:150px" maxlength="5000" required></textarea>
+    <label for="message">Your Message *</label>
+    <div class="invalid-feedback">Please enter a message.</div>
+  </div>
+
+  <!-- Spam trap: hidden from people, bots fill it in -->
+  <div style="position:absolute;left:-9999px;" aria-hidden="true">
+    <input type="text" name="website" tabindex="-1" autocomplete="off">
+  </div>
+
+  <div class="d-flex align-items-center gap-3 mt-4">
+    <button type="submit" class="btn btn-wine px-4 py-2" id="submitBtn">Send message</button>
+    <span class="form-msg" id="formMsg"></span>
+  </div>
+</form>
       </div>
     </div>
   </section>
@@ -497,14 +610,10 @@ and we&#39;ll reply within a couple of days.</p>
   // ---------- Gallery data ----------
   // Categories: botanical | abstract-acrylic | landscape-acrylic | workshops
   const works = [
-    // --- Botanical ---
-    {title:"Hydrengeas", meta:"Botanical Acrylic · 50x40cm", img:"images/botanical-acrylics/Hydrengeas_Botanical.jpg", cat:"botanical-acrylics", size:"tall"},
-    {title:"The Pale Rose", meta:"Botanical Acrylic · 50x70x1.5cm", img:"images/botanical-acrylics/Pale_Rose_Botanical.jpg", cat:"botanical-acrylics", size:"wide"},
-    {title:"Pink Rosy Gentelness", meta:"Botanical Acrylic · 40x50cm", img:"images/botanical-acrylics/Pink_Rosy.jpg", cat:"botanical-acrylics", size:"wide"},
 
     // --- Abstract Acrylic ---
-    {title:"Grounded", meta:"Abstract Acrylic · 94×61cm", img:"images/abstract-acrylic/Grounded.jpeg", cat:"abstract-acrylic", size:"tall"},
-    {title:"The Language of Petals", meta:"Abstract Acrylic · 94×61cm", img:"images/abstract-acrylic/The-language-of-petals.jpeg", cat:"abstract-acrylic", size:"tall"},
+    {title:"Grounded", meta:"Abstract Acrylic · 94×61cm", img:"images/abstract-acrylic/Grounded.jpeg", cat:"abstract-acrylic", size:""},
+    {title:"The Language of Petals", meta:"Abstract Acrylic · 94×61cm", img:"images/abstract-acrylic/The-language-of-petals.jpeg", cat:"abstract-acrylic", size:""},
     {title:"Velvet Symphony", meta:"Abstract Acrylic · 76×90×3.5cm", img:"images/abstract-acrylic/Velvet-Symphony.jpeg", cat:"abstract-acrylic", size:"wide"},
     {title:"Blue Beauty I", meta:"Abstract Acrylic · 76×61cm", img:"images/abstract-acrylic/Blue-beauty1.jpeg", cat:"abstract-acrylic", size:""},
     {title:"Blue Beauty II", meta:"Abstract Acrylic · 76×61cm", img:"images/abstract-acrylic/Blue-beauty2.jpeg", cat:"abstract-acrylic", size:""},
@@ -513,6 +622,11 @@ and we&#39;ll reply within a couple of days.</p>
     {title:"Splashing Wave", meta:"Landscape Acrylic · 56x82cm", img:"images/landscape-acrylics/Splashing_Wave.jpeg", cat:"landscape-acrylic", size:"wide"},
     {title:"Yafa", meta:"Landscape Acrylic · 101x76cm", img:"images/landscape-acrylics/Yafa.jpg", cat:"landscape-acrylic", size:""},
     {title:"Melbourne from the Yarra", meta:"Landscape Acrylic · 101x76cm", img:"images/landscape-acrylics/Melbourne_from_the_Yarra.JPG", cat:"landscape-acrylic", size:""},
+
+        // --- Botanical ---
+    {title:"Hydrengeas", meta:"Botanical Acrylic · 50x40cm", img:"images/botanical-acrylics/Hydrengeas_Botanical.jpg", cat:"botanical-acrylics", size:""},
+    {title:"The Pale Rose", meta:"Botanical Acrylic · 50x70x1.5cm", img:"images/botanical-acrylics/Pale_Rose_Botanical.jpg", cat:"botanical-acrylics", size:"wide"},
+    {title:"Pink Rosy Gentelness", meta:"Botanical Acrylic · 40x50cm", img:"images/botanical-acrylics/Pink_Rosy.jpg", cat:"botanical-acrylics", size:"wide"},
 
     // --- Workshops ---
     {title:"Workshop · Paint with Mai", meta:"", img:"images/workshops/IMG_444_wide.jpg", cat:"workshops", size:"wide"},
@@ -603,11 +717,62 @@ and we&#39;ll reply within a couple of days.</p>
   });
 
   // ---------- Contact form ----------
-  document.getElementById('contactForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    document.getElementById('formMsg').textContent = "Thanks — we'll be in touch soon.";
-    this.reset();
-  });
+const contactForm = document.getElementById('contactForm');
+const formMsg = document.getElementById('formMsg');
+const submitBtn = document.getElementById('submitBtn');
+let msgTimer;
+
+function showMsg(text, isError = false, clearAfter = 0){
+  clearTimeout(msgTimer);
+  formMsg.textContent = text;
+  formMsg.style.color = isError ? '#b02a37' : '';
+  if(clearAfter){
+    msgTimer = setTimeout(() => { formMsg.textContent = ''; }, clearAfter);
+  }
+}
+
+contactForm.addEventListener('submit', async function(e){
+  e.preventDefault();
+  showMsg('');
+
+  // Empty/invalid form: show the red field errors only, no message text
+  this.classList.add('was-validated');
+  if(!this.checkValidity()){
+    const firstInvalid = this.querySelector(':invalid');
+    if(firstInvalid) firstInvalid.focus();
+    return;
+  }
+
+  submitBtn.disabled = true;
+
+  try{
+    const res  = await fetch('submit.php', { method:'POST', body:new FormData(this) });
+    const data = await res.json();
+
+    if(res.ok && data.success){
+      this.reset();
+      this.classList.remove('was-validated');
+      showMsg("Thanks — we'll be in touch soon.", false, 4000);
+    } else if(data.errors){
+      Object.keys(data.errors).forEach(key => {
+        const field = this.querySelector(`[name="${key}"]`);
+        if(!field) return;
+        field.setCustomValidity(data.errors[key]);
+        const fb = field.parentElement.querySelector('.invalid-feedback');
+        if(fb) fb.textContent = data.errors[key];
+        field.addEventListener('input', () => field.setCustomValidity(''), { once:true });
+      });
+      this.classList.add('was-validated');
+      showMsg('Please check the highlighted fields.', true, 4000);
+    } else {
+      showMsg('Something went wrong, please try again.', true, 5000);
+    }
+  } catch(err){
+    showMsg('Something went wrong, please try again.', true, 5000);
+  }
+
+  submitBtn.disabled = false;
+});
 </script>
 
 </body>
